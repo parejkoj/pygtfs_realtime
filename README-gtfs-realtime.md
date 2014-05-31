@@ -4,6 +4,7 @@ gtfs-realtime
 This is the pseudo-literal representing the protocol buffer that
 we need to emit as part of the realtime feed.
 
+```
 FeedMessage {
     FeedHeader {
       gtfs_realtime_version: "1.0"
@@ -50,3 +51,4 @@ FeedMessage {
         }
       }
     }
+```
