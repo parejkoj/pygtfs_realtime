@@ -11,7 +11,7 @@ FeedMessage {
     }
     FeedEntity {
       id: "bus1"
-      VehiclePosition: {
+      vehicle: {                    # VehiclePosition
         TripDescriptor: {
           route_id: 1528            # union station shuttle
         }
