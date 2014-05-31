@@ -4,25 +4,24 @@ gtfs-realtime
 This is the pseudo-literal representing the protocol buffer that
 we need to emit as part of the realtime feed.
 
-
-    header {
+```
+FeedMessage {
+    FeedHeader {
       gtfs_realtime_version: "1.0"
-      incrementality: FULL_DATASET
       timestamp: feed-creation-time
     }
-    entity {
+    FeedEntity {
       id: "bus1"
-      vehicle: {
-        trip: {
+      VehiclePosition: {
+        TripDescriptor: {
           route_id: 1528            # union station shuttle
         }
-
-        vehicle: {
+        VehicleDescriptor: {
           id: "bus1"                # system assigned
           label: "Bus 1"
           license_plate: "plate1"   
         }
-        position: {
+        Position: {
           latitude:   41.875928   # WGS-84
           longitude: -87.7010799  # WGS-84
           bearing:
@@ -31,19 +30,19 @@ we need to emit as part of the realtime feed.
         }
       }
     }
-    entity {
+    FeedEntity {
       id: "vehicle2"
-      vehicle: {
-        trip: {
+      VehiclePosition: {
+        TripDescriptor: {
           route_id: 1528            # union station shuttle
         }
 
-        vehicle: {
+        VehicleDescriptor: {
           id: "bus-2"               # system assigned
           label: "Bus 2"
           license_plate: "plate2"   
         }
-        position: {
+        Position: {
           latitude:   41.875928   # WGS-84
           longitude: -87.7010799  # WGS-84
           bearing:
@@ -52,3 +51,4 @@ we need to emit as part of the realtime feed.
         }
       }
     }
+```
